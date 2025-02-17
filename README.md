@@ -48,7 +48,7 @@ To set up the project on your local machine, follow these steps:
      python app.py
 
 6. Open your browser and go to the following URL:
-     http://127.0.0.1:5000/
+     http://13.61.146.96:5000/
 
 How to Use:
 1. Open the web application using the URL above.
