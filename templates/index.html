@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Loan Approval Prediction</h2>
+    
+    <form action="/predict" method="post">
+        <label>Gender (0: Female, 1: Male):</label>
+        <input type="number" name="gender" required><br>
+
+        <label>Married (0: No, 1: Yes):</label>
+        <input type="number" name="married" required><br>
+
+        <label>Dependents:</label>
+        <input type="number" name="dependents" required><br>
+
+        <label>Education (0: Graduate, 1: Not Graduate):</label>
+        <input type="number" name="education" required><br>
+
+        <label>Self Employed (0: No, 1: Yes):</label>
+        <input type="number" name="self_employed" required><br>
+
+        <label>Applicant Income:</label>
+        <input type="number" name="applicant_income" required><br>
+
+        <label>Coapplicant Income:</label>
+        <input type="number" name="coapplicant_income" required><br>
+
+        <label>Loan Amount:</label>
+        <input type="number" name="loan_amount" required><br>
+
+        <label>Loan Amount Term (in months)</label>
+        <input type="number" name="loan_amount_term" required><br>
+
+        <label>Credit History (0: No, 1: Yes):</label>
+        <input type="number" name="credit_history" required><br>
+
+        <label>Property Area (0: Rural, 1: Semiurban, 2: Urban):</label>
+        <input type="number" name="property_area" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+
+</body>
+</html>
